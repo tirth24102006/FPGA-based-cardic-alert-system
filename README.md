@@ -7,7 +7,7 @@ A hardware implementation of the **Pan-Tompkins QRS detection algorithm** for re
 
 The system reads pre-recorded ECG waveforms from on-chip memory, runs them through a 4-stage DSP pipeline (Low-Pass Filter → Derivative → Squaring → Moving Window Integration), detects R-peaks using an adaptive thresholding scheme, and classifies the heart rhythm based on beat-to-beat timing — all in real hardware, with switches to select the ECG pattern and LEDs/buzzer to display the diagnosis.
  
----
+--- 
 
 ## Table of Contents
 
