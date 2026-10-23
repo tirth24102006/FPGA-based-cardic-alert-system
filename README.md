@@ -83,9 +83,9 @@ This project implements the classic **Pan-Tompkins algorithm** (Pan & Tompkins, 
                          ┌─────────────▼──────────────-─┐
                          │   arrhythmia_classifier      │
                          │ (RR-interval stopwatch logic)│
-                         └──────┬───────────┬───────────┘
-                                │           │
-                     led_normal/tachy/    buzzer
+                         └──────┬───────────-───────────┘
+                                │           
+                     led_normal/tachy/    
                      brady/irregular
                                 │
                          ┌──────▼──────┐
