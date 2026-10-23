@@ -1,7 +1,6 @@
-module top_pt_system (clk,rst_n,btnc,sw0,sw1,led_normal,led_tachy,led_brady,led_irregular,buzzer);
+module top_pt_system (clk,rst_n,btnc,sw0,sw1,led_normal,led_tachy,led_brady,led_irregular);
 input clk,rst_n,btnc,sw0,sw1;
 output reg led_normal,led_tachy,led_brady,led_irregular; 
-output buzzer;
 reg sample_en;
 `ifdef SIMULATION
     reg [1:0] sim_clk_cnt;
@@ -66,7 +65,7 @@ end
 sim_bram design_rom (.clk(clk),.addr(rom_addr),.dout(ecg_from_rom));
 pan_tompkins_processor processor_core (.clk(clk),.rst_n(rst_n),.ecg_in(ecg_from_rom),.valid_in(sample_en_d1),.mwi_out(mwi_to_threshold),.valid_out(valid_mwi));
 adaptive_threshold peak_detector (.clk(clk),.rst_n(rst_n),.mwi_in(mwi_to_threshold),.valid_in(valid_mwi),.r_peak_pulse(r_peak_detected));
-arrhythmia_classifier classifier_core (.clk(clk),.rst_n(rst_n),.sample_en(sample_en),.r_peak_pulse(r_peak_detected),.led_normal(w_normal),.led_tachy(w_tachy),.led_brady(w_brady),.led_irregular(w_irregular),.buzzer(buzzer));
+arrhythmia_classifier classifier_core (.clk(clk),.rst_n(rst_n),.sample_en(sample_en),.r_peak_pulse(r_peak_detected),.led_normal(w_normal),.led_tachy(w_tachy),.led_brady(w_brady),.led_irregular(w_irregular));
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         led_normal    <= 0;
