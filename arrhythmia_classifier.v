@@ -1,7 +1,6 @@
-module arrhythmia_classifier (clk,rst_n,sample_en,r_peak_pulse,led_normal,led_tachy,led_brady,led_irregular,buzzer);
+module arrhythmia_classifier (clk,rst_n,sample_en,r_peak_pulse,led_normal,led_tachy,led_brady,led_irregular);
 input clk,rst_n,sample_en,r_peak_pulse;
 output reg led_normal,led_tachy,led_brady,led_irregular;
-output buzzer;
 reg [15:0] sample_counter,current_rr,previous_rr;
 reg [1:0] beat_count; 
 wire signed [16:0] rr_diff;
@@ -68,5 +67,4 @@ always @(posedge clk or negedge rst_n) begin
         end
     end
 end
-assign buzzer = led_tachy || led_brady || led_irregular;
 endmodule
