@@ -1,11 +1,11 @@
 # FPGA-based-cardic-alert-system
-FPGA-ready Verilog pipeline implementing Pan-Tompkins QRS detection with adaptive thresholding and RR-interval based arrhythmia classification (Normal/Tachy/Brady/Irregular). Multi-patient MIT-BIH ECG simulation with LED and buzzer alerts.
+FPGA-ready Verilog pipeline implementing Pan-Tompkins QRS detection with adaptive thresholding and RR-interval based arrhythmia classification (Normal/Tachy/Brady/Irregular). Multi-patient MIT-BIH ECG simulation with LED alerts.
  
 # ❤️ Real-Time ECG Arrhythmia Detection using Pan-Tompkins Algorithm (Verilog / FPGA)
 
 A hardware implementation of the **Pan-Tompkins QRS detection algorithm** for real-time R-peak (heartbeat) detection and arrhythmia classification (Tachycardia / Bradycardia / Irregular Rhythm / Normal), written in Verilog and targeted at FPGA boards (e.g. Xilinx Nexys/Basys series).
 
-The system reads pre-recorded ECG waveforms from on-chip memory, runs them through a 4-stage DSP pipeline (Low-Pass Filter → Derivative → Squaring → Moving Window Integration), detects R-peaks using an adaptive thresholding scheme, and classifies the heart rhythm based on beat-to-beat timing — all in real hardware, with switches to select the ECG pattern and LEDs/buzzer to display the diagnosis.
+The system reads pre-recorded ECG waveforms from on-chip memory, runs them through a 4-stage DSP pipeline (Low-Pass Filter → Derivative → Squaring → Moving Window Integration), detects R-peaks using an adaptive thresholding scheme, and classifies the heart rhythm based on beat-to-beat timing — all in real hardware, with switches to select the ECG pattern and LEDs to display the diagnosis.
   
 ---  
     
